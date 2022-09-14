@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "chai": "^4.3.6",
+    "cypress": "^9.5.0",
+    "cypress-xpath": "^2.0.1",
+    "dotenv": "^10.0.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "mocha": "^10.0.0"
+  },
+  "name": "automation-functional-testing",
+  "description": "Test automation functional using Cypress.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:run:local": "npx cypress run --env configFile=local",
+    "test:run:stage": "npx cypress run --env configFile=stage",
+    "test:open:local": "npx cypress open --env configFile=local",
+    "test:open:stage": "npx cypress open --env configFile=stage",
+    "test:open:prod": "npx cypress open --env configFile=production",
+    "test:run:prod": "npx cypress run --env configFile=production"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^5.0.8",
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
+}

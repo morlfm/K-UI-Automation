@@ -1,0 +1,10 @@
+{
+  "baseUrl": "https://sdet-challenge.herokuapp.com",
+  "defaultCommandTimeout": 10000,
+  "video": false,
+  "viewportWidth": 1920,
+  "viewportHeight": 1080,
+  "projectId": "xiet2r",
+  "projectName": "KIN"
+  }
+  

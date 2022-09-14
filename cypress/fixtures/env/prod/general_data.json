@@ -1,0 +1,9 @@
+{
+  "users": {
+    "name": ["Fran", "Bob", "Alice"]
+  },
+  "pets": {
+    "name": ["Fido", "Rex", "Lili", "Spot", "Fluffy",
+       "Buster", "Mittens", "Socks","Bob", "Toto"]
+  }
+}

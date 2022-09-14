@@ -1,0 +1,43 @@
+name: cypress Kin 
+
+on:
+  workflow_dispatch:
+    inputs:
+      amb:
+        description: 'Select environment: development / production'
+        required: false
+        default: 'production'
+      browser:
+        description: 'Select browser: chrome / electron'
+        required: false
+        default: 'chrome'
+  pull_request:
+    branches: [ master, release/develop ]
+    
+env:
+  DEFAULT_AMB: "production"
+  DEFAULT_BROWSER: "chrome"
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node14.17.0-chrome88-ff89
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress install
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+
+  cypress-run:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node14.16.0-chrome90-ff88
+    needs: install
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cypress run 
+        uses: cypress-io/github-action@v2
+        with: 
+          command: npx cypress run --config-file config/${{github.event.inputs.amb || env.DEFAULT_AMB}}.json --browser ${{github.event.inputs.browser || env.DEFAULT_BROWSER}} --record --key 6cbf7483-bce4-4bb2-afbb-5d23583b25c0
+      
