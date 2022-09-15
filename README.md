@@ -4,7 +4,7 @@
 
 Funcional test automation project using Cypress.
 
-## Technologies 
+## Technologies to
 
 - Node.js
 - JavaScript
@@ -17,20 +17,24 @@ i noticed some unnecessary botlenecks using page objects, of course sometimes it
 case by case always.
 
 - So i like to separate by contexts or purposes or also by businness layer , this project i just simple did one best pratice that i believe
-that is mandatory which is separate elements and organize them by each context or layer (like in this case , login , commons and etc)
-and also create some commands that are kind of shared so we can reuse that
+that is mandatory which is separate elements and organize them by each context or layer (login , commons and etc)
 
-## Simple Play
+- Regarding data driven testing in UI automation scripts i do not believe that is the best approach , depend on each case  but normally we could focus on core functionalities, but we can using some data to change behaviors and do some data table to load in tests also. So my main focus was in the functionalities, not to thest every field on the page.
 
-- It has a simple pipeline just to make easier the running
+## Simple Play - You dont need to install anything locally nor even run it :)
+
+- It has a simple pipeline just to make easier running
 
 - To run this project without any need of local installation or setup please go to: 
- https://github.com/morlfm/KIN-UI-Automation/actions/workflows/node.js.yml  and then click on cypress cloud app run bellow "All workflows"
-then click on "Run workflow" (please choose environment production since its the only one configured in order of the challenge)
+ https://github.com/morlfm/KIN-UI-Automation/actions/workflows/node.js.yml  "All workflows" then click on "Run workflow" (please choose environment production since its the only one configured in order of the challenge)
+
+- Sometimes containers from pipelines get some delay or even stop for secondary reasons ( network, disk , memory and so on) and also cypress dashnoard sometimes also get stuck , so please if anything goes wrong or fail take a deeper look :) 
 
 Test Results:
 
 - https://dashboard.cypress.io/projects/xiet2r/runs
+
+
 
 or follow instructions bellow to run locally
 
@@ -38,9 +42,7 @@ or follow instructions bellow to run locally
 
 1. Please install [Node.js](https://nodejs.org/en/download/).
 
-2. Please install [Docker](https://www.docker.com/get-started).
-
-3. Please type on the command prompt to install dependencies:
+2. Please type on the command prompt to install dependencies:
 ```
 npm i 
 ```
@@ -59,8 +61,7 @@ npx cypress run
 
 ## Improvements
 
-- We could also have fixtures separate by env because sometimes the test data could be specific for some cases
-- To run in the pipeline we should create our own image to not load resources directly from docker 
+- To continuously run in the pipeline we should create our own image to not load resources directly from docker 
 - The pipeline configures it is just a simple one, but we could have a bunch of necessary and mandatory improvements like cache and
 also especifying when to trigger the pipe with which rules and so on.
 - Tests results in a link but it could be on slack channel or so 
