@@ -20,4 +20,8 @@ describe('Registration', () => {
   it('should delete my pet', () => {
     r.deletePet();
   });
+  
+  it('should not delete pet', () => {
+    r.invalidDeletePet();
+  });
 });
