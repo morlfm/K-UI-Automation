@@ -1,4 +1,4 @@
-# KIN-UI-Automation
+# KUI-Automation
 
 # Functional test automation
 
